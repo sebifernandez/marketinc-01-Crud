@@ -20,6 +20,14 @@ agregar.addEventListener('click', function() {
 abrirPanel.addEventListener("click", () => {
     principal.classList.add("ocultar");
     ingresoNuevo.classList.add("mostrar");
+
+    document.getElementById("btnAgregar").style.display = "block";
+    document.getElementById("btnModificar").style.display = "none";
+    
+    document.getElementById("productos").value = "";
+    document.getElementById("txtCantidad").value = "";
+    document.getElementById("txtLado").value = "";
+    document.getElementById("txtPosicion").value = "";
 });
 
 // Removiendo clases muestra la pantalla principal ocultando el div de 'ingreso nuevo'  
