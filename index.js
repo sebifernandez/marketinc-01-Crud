@@ -9,6 +9,7 @@ agregar.addEventListener('click', function() {
     agregarDatos();
 })
 
+// Ver después el fallo acá. Se utiliza 'onclick' en su lugar
 // const submit = document.querySelector('#btnModificar');
 // submit.addEventListener('click', function() {
 //     updateRegistro();
@@ -48,6 +49,7 @@ function validarFormulario(){
         return false;
     }
 
+    // Acá da una alerta de que algunos datos no se ingresaron, pero permite continuar. Habría que confirmar si son realmente necesarios para la carga o se lo deja así.
     if(lado == "" || posicion == ""){
         swal({
             title: "Cuidado: No ha ingresado todos los campos",
@@ -58,15 +60,6 @@ function validarFormulario(){
         })
     }
 
-    // if(posicion == ""){
-    //     swal({
-    //         title: "No ha ingresado Posición",
-    //         text: "Algunos productos no lo requieren, de ser así puede continuar",
-    //         icon: "warning",
-    //         buttons: true,
-    //         dangerMode: true,
-    //     })
-    // }
     return true;
 }
 
@@ -112,7 +105,7 @@ function agregarDatos(){
         if(localStorage.getItem("listaProductos") == null){
             listaProductos = [];
         }else{
-            listaProductos = JSON.parse(localStorage.getItem("listaProductos"))//ver parentesis amarillo
+            listaProductos = JSON.parse(localStorage.getItem("listaProductos"));
         }
 
         listaProductos.push({
